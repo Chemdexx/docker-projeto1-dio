@@ -1,0 +1,12 @@
+# Este arquivo YAML contém instruções para um programa Python que gera números aleatórios
+
+# Define a quantidade de númeroas aleatórios a gerar
+num_random_numbers: 10
+
+# Define o intervalo dos números aleatórios
+random_number_range:
+  min: 1
+  max: 100
+
+# # Define o arquivo de saída para os números aleatórios gerados
+output_file: random_numbers.txt
