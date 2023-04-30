@@ -1,9 +1,16 @@
 version: '3.9'
+
 services:
   apache:
     image: httpd:latest
     container_name: my-apache-app
     ports:
-    - '80:80'
+      - '80:80'
     volumes:
-    - ./website:/usr/local/apache2/htdocs
+      - ./website:/usr/local/apache2/htdocs
+      - ./config.yaml:/app/config.yaml
+      - ./generate_random_numbers.py:/app/generate_random_numbers.py
+
+    # Command to generate random numbers and write them to a file
+    command: sh -c "python generate_random_numbers.py && cp random_numbers.txt /usr/local/apache2/htdocs"
+
